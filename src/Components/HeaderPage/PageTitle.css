@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    box-shadow: inset 0px -1px #aaaaaa;
+    font-family: 'Inter', sans-serif;
+    background-color: #eceef2;
+}
+  
+.header-text {
+    padding-left: 15%;
+    margin: 15px 0;
+}
+  
+.header-text-1 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: #111111;
+}
+  
+.header-text-2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    color: #074ee8;
+}
+  
