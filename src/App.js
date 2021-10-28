@@ -1,13 +1,14 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderPage from './Components/HeaderPage';
 import FormContainer from './Components/FormContainer';
 
 const App = () => {
+    const [pageTitle, setPageTitle] = useState("First Tab");
 
     return (
         <main>
-            <HeaderPage/>
+            <HeaderPage title={pageTitle}/>
             <section>
                 <FormContainer/>
             </section>
