@@ -6,8 +6,10 @@ const Selects = ({size, start, time}) => {
 
     return (
         <div className="grid-collum four-inputs-by-line">
-            <label className="labels" htmlFor={time}>{time}
-                <select className="select" id={time} name="day" required>
+            <label className="labels" htmlFor={time}>
+                {time.charAt(0).toUpperCase() + time.slice(1)}
+                <select className="select" id={time} name="day">
+                    <option value=""></option>
                     {optionNumbers.map( (optionNumber, index) => {
                         return <option key={index}>{optionNumber}</option>
                     })}
