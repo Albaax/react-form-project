@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FormContainer.css';
+import '../Tabs/Tabs.css';
+import '../Buttons/Buttons.css';
+import FirstTab from '../Tabs/FirstTab';
+import TabNavigation from '../TabNavigation';
 
 const FormContainer = () => {
-
-    return (
+    const tabs = ['Basic', 'Social', 'Certificates'];
+    const [isActive, setActive] = useState({
+        active1: true,
+        active2: false,
+        active3: false});
+    const [currentStep, setCurrentStep] = useState(0);    
+    const forms = [
+        <FirstTab />,
+    ];
+    const nextStep = () => {
+        setCurrentStep(currentStep + 1);
+    }
+      return (
         <div className="form-container">
-            <h2>teste</h2>
+            <div className="tab-container">
+                <h1 className="title">Team Sign Up</h1>
+                <div className="tabs-container">
+                    {tabs.map( (tab, index) => {
+                        return (
+                            <TabNavigation key={index} currentTab={tab}
+                            activeTab={`${isActive}.active${index+1}` ? 'active' : ''}
+                            onClick={() => {setActive(!`${isActive}.active${index+1}`)}}/>
+                        )
+                    })}
+                </div>
+                { forms[currentStep] }
+            </div>
         </div>
     );
 }
