@@ -4,6 +4,7 @@ import '../Tabs/Tabs.css';
 import '../Buttons/Buttons.css';
 import FirstTab from '../Tabs/FirstTab';
 import TabNavigation from '../TabNavigation';
+import SecondTab from '../Tabs/SecondTab';
 
 const FormContainer = () => {
     const tabs = ['Basic', 'Social', 'Certificates'];
@@ -11,9 +12,10 @@ const FormContainer = () => {
         active1: true,
         active2: false,
         active3: false});
-    const [currentStep, setCurrentStep] = useState(0);    
+    const [currentStep, setCurrentStep] = useState(1);    
     const forms = [
         <FirstTab />,
+        <SecondTab />
     ];
     const nextStep = () => {
         setCurrentStep(currentStep + 1);
