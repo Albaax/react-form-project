@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './FormContainer.css';
 import '../Tabs/Tabs.css';
 import '../Buttons/Buttons.css';
@@ -7,13 +7,14 @@ import TabNavigation from '../TabNavigation';
 import SecondTab from '../Tabs/SecondTab';
 import ThirdTab from '../Tabs/ThirdTab';
 
-const FormContainer = () => {
+const FormContainer = ({title, changeTitle}) => {
     const tabs = ['Basic', 'Social', 'Certificates'];
+    const titles = ['First Tab', 'Second Tab', 'Third Tab', 'Success'];
     const [isActive, setActive] = useState({
         active1: true,
         active2: false,
         active3: false});
-    const [currentStep, setCurrentStep] = useState(2);    
+    const [currentStep, setCurrentStep] = useState(0);    
     const forms = [
         <FirstTab />,
         <SecondTab />,
@@ -22,7 +23,11 @@ const FormContainer = () => {
     const nextStep = () => {
         setCurrentStep(currentStep + 1);
     }
-      return (
+    useEffect( () => {
+        changeTitle(titles[currentStep]);
+    }, [currentStep]);
+      
+    return (
         <div className="form-container">
             <div className="tab-container">
                 <h1 className="title">Team Sign Up</h1>
