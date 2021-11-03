@@ -12,14 +12,14 @@
     font-weight: normal;
 }
 
-/* svg { */
-    /* height: 20px; */
-/* } */
-/*  */
-/* .svg-right { */
-    /* margin-left: 3px; */
-/* } */
-/*  */
-/* .svg-left { */
-    /* margin-right: 3px; */
-/* } */
+svg { 
+    height: 20px;
+}
+
+.svg-right {
+    margin-left: 3px;
+}
+
+.svg-left {
+    margin-right: 3px;
+}
