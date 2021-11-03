@@ -5,7 +5,7 @@ const TabNavigation = ({currentTab, activeTab, onClick}) => {
 
     return (
         <div onClick={onClick} className={`tabs ${currentTab} ${activeTab}`}>
-            <span clasName={`${currentTab}`}>{currentTab}</span>
+            <span className={`${currentTab}`}>{currentTab}</span>
         </div>
         );
 }
