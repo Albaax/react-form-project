@@ -1,10 +1,10 @@
 import React from 'react';
 import './TabNavigation.css';
 
-const TabNavigation = ({currentTab, activeTab}) => {
+const TabNavigation = ({currentTab, activeTab, onClick}) => {
 
     return (
-        <div className={`tabs ${currentTab} ${activeTab}`}>
+        <div onClick={onClick} className={`tabs ${currentTab} ${activeTab}`}>
             <span class={`${currentTab}`}>{currentTab}</span>
         </div>
         );
