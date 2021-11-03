@@ -19,10 +19,6 @@
     justify-content: end;
 }
 
-.hide {
-    display: none !important;
-}
-
 button {
     cursor: pointer;
 }
@@ -47,9 +43,6 @@ button {
     justify-content: space-between;
 }
 
-.show {
-    display: block !important;
-}
 /* First TAB */
 
 .four-inputs-by-line {
@@ -99,4 +92,8 @@ button {
 .btn-finish {
     margin-top: 21px;
     margin-bottom: 13px;
+}
+
+#content_3tab {
+    background-color: #FFFFFF;
 }
