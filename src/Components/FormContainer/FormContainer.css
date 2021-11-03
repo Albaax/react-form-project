@@ -1,9 +1,49 @@
-.form-container {
-    width: 650px;
-    height: auto;
-    background-color: #ffffff;
-    border-radius: 20px;
-    max-width: 85%;
-    margin: 1% 0;
+.form container {
+  width: 650px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  max-width: 85%;
+  margin: 3% 0;
   }
   
+.tabs container {
+  display: flex;
+}
+
+.tab container {
+  margin: 6% 5% 5% 5%;
+}
+
+.title {
+  font-family: 'Inter', sans serif;
+  color: #111;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+#btn_heart {
+  background-color: #fff;
+  color: #111;
+  border: none;
+}
+
+#btn_heart svg {
+  height: 20px;
+}
+#btn_heart svg:hover {
+  fill: #074EE8;
+  color: #074EE8;
+}
+
+textarea:focus, input:focus:not(.input heart), select:focus {
+  box-shadow: 0 0 0 0;
+  border: 2px solid #aaaaaa;
+  outline: 0;
+}
+
+.input heart:focus{
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
