@@ -10,7 +10,7 @@ const CheckBox = ({changeData}) => {
     return (
         <label className="check-terms">I accept the terms and privacy
             <input
-            required
+            required 
             onChange={getData} type="checkbox" />
             <span className="checkmark"></span>
         </label>
