@@ -11,7 +11,6 @@ const App = () => {
             <HeaderPage title={pageTitle}/>
             <section>
                 <FormContainer 
-                title={pageTitle}
                 changeTitle={setPageTitle}/>
             </section>
         </main>
