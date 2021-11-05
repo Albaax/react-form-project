@@ -6,41 +6,48 @@ import FirstTab from '../Tabs/FirstTab';
 import TabNavigation from '../TabNavigation';
 import SecondTab from '../Tabs/SecondTab';
 import ThirdTab from '../Tabs/ThirdTab';
+import SuccessTab from '../Tabs/SuccessTab';
 
-const FormContainer = ({title, changeTitle}) => {
-    const tabs = ['Basic', 'Social', 'Certificates'];
+const FormContainer = ({changeTitle}) => {
     const titles = ['First Tab', 'Second Tab', 'Third Tab', 'Success'];
-    const [isActive, setActive] = useState({
-        active1: true,
-        active2: false,
-        active3: false});
-    const [currentStep, setCurrentStep] = useState(0);    
-    const forms = [
-        <FirstTab />,
-        <SecondTab />,
-        <ThirdTab />
-    ];
+    const [currentStep, setCurrentStep] = useState(0);  
+    const [isActive2, setIsActive2] = useState(false);  
+    const [isActive3, setIsActive3] = useState(false);  
     const nextStep = () => {
         setCurrentStep(currentStep + 1);
+    } 
+    const sendData = event => {
+        event.preventDefault();
     }
+    const forms = [
+        <FirstTab changeStep={nextStep}/>,
+        <SecondTab changeStep={nextStep}/>,
+        <ThirdTab changeStep={nextStep}/>,
+        <SuccessTab />
+    ];
     useEffect( () => {
         changeTitle(titles[currentStep]);
+        if(currentStep === 1) setIsActive2(true);
+        if(currentStep === 2) setIsActive3(true);
     }, [currentStep]);
       
     return (
         <div className="form-container">
             <div className="tab-container">
-                <h1 className="title">Team Sign Up</h1>
-                <div className="tabs-container">
-                    {tabs.map( (tab, index) => {
-                        return (
-                            <TabNavigation key={index} currentTab={tab}
-                            activeTab={`${isActive}.active${index+1}` ? 'active' : ''}
-                            onClick={() => {setActive(!`${isActive}.active${index+1}`)}}/>
-                        )
-                    })}
-                </div>
-                { forms[currentStep] }
+                {currentStep === 3 ? '' : 
+                <>
+                    <h1 className="title">Team Sign Up</h1>
+                    <div className="tabs-container">
+                        <TabNavigation
+                        step2={isActive2} 
+                        step3={isActive3} 
+                        setCurrentStep={setCurrentStep}
+                        currentStep={currentStep}/>
+                    </div>
+                </>}
+                <form method="POST" onSubmit={sendData}>
+                    { forms[currentStep] }
+                </form>
             </div>
         </div>
     );
