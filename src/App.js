@@ -4,13 +4,14 @@ import HeaderPage from './Components/HeaderPage';
 import FormContainer from './Components/FormContainer';
 
 const App = () => {
-    const [pageTitle, setPageTitle] = useState("First Tab");
-
+    const [pageTitle, setPageTitle] = useState('');
+    
     return (
         <main>
             <HeaderPage title={pageTitle}/>
             <section>
-                <FormContainer/>
+                <FormContainer 
+                changeTitle={setPageTitle}/>
             </section>
         </main>
     );

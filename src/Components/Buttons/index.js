@@ -1,11 +1,11 @@
 import React from 'react';
 import './Buttons.css';
 
-const Buttons = ({buttonName, buttonId, buttonClass, 
+const Buttons = ({clickChange, allSet, buttonName, buttonId, buttonClass, 
                 ButtonIconLeft, ButtonIconRight}) => {
 
     return (
-        <button id={buttonId} className={buttonClass}>
+        <button onClick={allSet ? clickChange : null} id={buttonId} className={buttonClass}>
             {ButtonIconLeft}
             {buttonName}
             {ButtonIconRight}
